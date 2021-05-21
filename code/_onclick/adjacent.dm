@@ -34,6 +34,8 @@
 	if(get_dist(src, T0) > 1 || z != T0.z) //too far
 		return FALSE
 
+	if(T0.z != z) return 0 //Used for redspace framework (From VOREStation)
+
 	// Non diagonal case
 	if(T0.x == x || T0.y == y)
 		// Check for border blockages

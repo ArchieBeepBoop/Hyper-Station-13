@@ -1274,7 +1274,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	ADMIN_PUNISHMENT_FAKEBWOINK,
 	ADMIN_PUNISHMENT_NUGGET,
 	ADMIN_PUNISHMENT_BREADIFY,
-	ADMIN_PUNISHMENT_BOOKIFY)
+	ADMIN_PUNISHMENT_BOOKIFY,
+	ADMIN_PUNISHMENT_REDSPACE)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in punishment_list
 
@@ -1393,6 +1394,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 			addtimer(CALLBACK(GLOBAL_PROC, .proc/bookify, target), BOOKIFY_TIME)
 			playsound(target, 'hyperstation/sound/misc/bookify.ogg', 60, 1)
 			#undef BOOKIFY_TIME
+		if(ADMIN_PUNISHMENT_REDSPACE)
+			redspace_abduction(target, src)
 
 	punish_log(target, punishment)
 
@@ -1470,4 +1473,3 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	else
 		message_admins("[key_name_admin(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name_admin(C)]")
 		log_admin("[key_name(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name(C)]")
-

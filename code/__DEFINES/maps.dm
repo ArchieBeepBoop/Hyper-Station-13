@@ -40,7 +40,7 @@ require only minor tweaks.
 #define ZTRAIT_LAVA_UNDERGROUND "Lava Underground"
 #define ZTRAIT_DINER "Diner"
 #define ZTRAIT_ISOLATED_RUINS "Isolated Ruins" //Placing ruins on z levels with this trait will use turf reservation instead of usual placement.
-
+#define ZTRAIT_REDSPACE "Redspace"
 // number - bombcap is multiplied by this before being applied to bombs
 #define ZTRAIT_BOMBCAP_MULTIPLIER "Bombcap Multiplier"
 
@@ -83,6 +83,8 @@ require only minor tweaks.
 #define ZTRAITS_REEBE list(ZTRAIT_REEBE = TRUE, ZTRAIT_BOMBCAP_MULTIPLIER = 0.5)
 
 #define ZTRAITS_DINER list(ZTRAIT_DINER = TRUE, ZTRAIT_BOMBCAP_MULTIPLIER = 0.5)
+
+#define ZTRAITS_REDSPACE list(ZTRAIT_REDSPACE = TRUE, ZTRAIT_GRAVITY = TRUE)
 
 #define DL_NAME "name"
 #define DL_TRAITS "traits"
